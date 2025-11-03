@@ -1,10 +1,15 @@
 /* ⚙️ Configurações Gerais (Reset Básico) */
 body {
-    font-family: Arial, sans-serif; /* Fonte simples e legível */
-    margin: 0; /* Remove margem padrão do navegador */
+    font-family: 'Roboto', sans-serif; /* ✒️ Aplica Roboto no corpo do texto */
+    margin: 0;
     padding: 0;
-    background-color: #ececec; /* Fundo cinza claro para contraste */
-    color: #333; /* Cor de texto padrão (preto suave) */
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* ✒️ Aplica Poppins nos Títulos */
+h1, h2, h3, h4, h5, h6, .logo h1 {
+    font-family: 'Poppins', sans-serif;
 }
 
 /* 🧱 Estilo do Cabeçalho */
@@ -103,8 +108,10 @@ section {
 }
 
 section h2 {
-    color: #c00023; /* Títulos das seções em VERMELHO */
-    border-bottom: 2px solid #000; /* Detalhe em PRETO sob o título */
+    color: #c00023;
+    font-size: 2em; /* Aumenta o tamanho do título da seção */
+    font-weight: 700; /* Deixa o título em negrito forte (700) */
+    border-bottom: 2px solid #000; 
     padding-bottom: 5px;
 }
 
