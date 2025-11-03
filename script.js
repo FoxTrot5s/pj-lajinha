@@ -1,48 +1,58 @@
-// 1. O Método Educativo: Explicando o JavaScript
-// Este código irá 'escutar' quando o botão é clicado.
-// Quando o clique acontece, ele verifica se o formulário está visível.
-// Se estiver visível, ele esconde (display: none). Se estiver escondido, ele mostra (display: block).
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Pega o botão e o conteúdo do formulário usando os IDs que definimos
-    const botao = document.getElementById('toggleContatoBtn');
-    const conteudo = document.getElementById('contato-conteudo');
     
-    // Adiciona um 'ouvinte de eventos' (event listener) ao botão
-    botao.addEventListener('click', function() {
+    // ===============================================
+    // CÓDIGO DO BOTÃO VOLTAR AO TOPO (Back-to-Top)
+    // ===============================================
+
+    // Pega o elemento do botão DEPOIS que o DOM (HTML) carregou
+    const mybutton = document.getElementById("back-to-top");
+
+    // Condição de Segurança: só executa se o botão for encontrado
+    if (mybutton) {
         
-        // Verifica o estilo atual do elemento (se está 'none' ou não)
-        if (conteudo.style.display === 'none' || conteudo.style.display === '') {
-            // Se estiver escondido, mostra e muda o texto do botão
-            conteudo.style.display = 'block';
-            botao.textContent = 'Ocultar Formulário (Traga sua História)';
-            
-            // Opcional: Rola a página até o formulário
-            conteudo.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            // Se estiver visível, esconde
-            conteudo.style.display = 'none';
-            botao.textContent = 'Traga sua História para Nós! (Clique para Abrir o Formulário)';
+        // Função que verifica a rolagem e mostra/esconde
+        function scrollFunction() {
+            // Se rolou mais de 20px
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block"; // MOSTRA
+            } else {
+                mybutton.style.display = "none";  // ESCONDE
+            }
         }
-    });
+        
+        // Quando o usuário rola, chama a função scrollFunction
+        window.onscroll = function() {
+            scrollFunction();
+        };
+    }
     
-    // Configura o estado inicial: garante que o formulário esteja escondido ao carregar
-    conteudo.style.display = 'none';
+    
+    // ===============================================
+    // OUTRAS FUNÇÕES (Toggle do Formulário)
+    // ===============================================
+
+    // ATENÇÃO: Se o seu formulário não usa um botão de 'toggle', 
+    // ou se você não definiu 'toggleContatoBtn' e 'contato-conteudo' no HTML,
+    // este bloco pode precisar de ajuste. Vamos assumir que você tem estes IDs no HTML.
+    
+    const botaoToggle = document.getElementById('toggleContatoBtn');
+    const conteudoContato = document.getElementById('contato-conteudo');
+    
+    if (botaoToggle && conteudoContato) {
+        
+        // Adiciona um 'ouvinte de eventos' (event listener) ao botão
+        botaoToggle.addEventListener('click', function() {
+            if (conteudoContato.style.display === 'none' || conteudoContato.style.display === '') {
+                conteudoContato.style.display = 'block';
+                botaoToggle.textContent = 'Ocultar Formulário (Traga sua História)';
+                conteudoContato.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                conteudoContato.style.display = 'none';
+                botaoToggle.textContent = 'Traga sua História para Nós! (Clique para Abrir o Formulário)';
+            }
+        });
+        
+        // Configura o estado inicial: garante que o formulário esteja escondido ao carregar
+        conteudoContato.style.display = 'none';
+    }
 });
-
-// Pega o elemento do botão
-let mybutton = document.getElementById("back-to-top");
-
-// Quando o usuário rola 20px para baixo, mostra o botão
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-// O retorno ao topo é tratado pelo href="#top" no HTML, 
-// desde que o elemento body tenha id="top" ou você use CSS/JS para rolagem suave

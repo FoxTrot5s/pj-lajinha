@@ -326,7 +326,7 @@ footer {
 }
 
 .botao-enviar:hover {
-    background-color: #8C001A; /* Vermelho mais escuro no hover */
+    background-color: #b40503; /* Vermelho mais escuro no hover */
 }
 
 .nota-contato {
@@ -395,32 +395,58 @@ footer {
 }
 
 .botao-contato-acao:hover {
-    background-color: #8C001A;
+    background-color: #b40503;
     transform: translateY(-2px);
 }
 
-/* ⏫ ESTILOS DO BOTÃO VOLTAR AO TOPO */
+/* ⏫ ESTILOS DO BOTÃO VOLTAR AO TOPO (VISUAL APRIMORADO) */
 #back-to-top {
-    display: none; /* Começa escondido, será visível com JavaScript */
-    position: fixed; /* Fixa o botão na tela, mesmo ao rolar */
-    bottom: 20px; /* 20px acima da borda inferior */
-    right: 30px; /* 30px da borda direita */
-    z-index: 99; /* Garante que fique acima de outros elementos */
-    background-color: #B00020; /* Vermelho Sóbrio */
+    /* Base e Posicionamento Inalterados */
+    display: none;
+    position: fixed;
+    bottom: 25px; /* Ligeiramente mais afastado da borda */
+    right: 25px;
+    z-index: 1000; /* Aumentamos o z-index para garantir visibilidade */
+    
+    /* Novo Design */
+    background-color: #b40503; /* Vermelho Sóbrio (Usando o tom principal) */
     color: white;
-    border: none;
-    text-align: center;
-    padding: 10px 15px;
-    font-size: 1.5em;
-    line-height: 1;
-    border-radius: 50%; /* Torna o botão redondo */
+    
+    /* Estilo de Cápsula/Pílula: Mais profissional que um círculo perfeito */
+    width: 45px; /* Largura fixa */
+    height: 45px; /* Altura fixa */
+    border-radius: 50%; /* Mantém redondo, se preferir */
+    
+    /* Efeito de Profundidade */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adiciona sombra para flutuar */
+    
+    /* Centralização do Ícone */
+
+    display: flex !important; 
+    align-items: center !important; 
+    justify-content: center !important;
+
+    /* display: flex;  Transforma em flexbox para centralizar o conteúdo (o "^") */
+    /* align-items: center;  Alinha verticalmente */
+    /* justify-content: center;  Alinha horizontalmente */
+    
+    /* 🛠️ O NOVO AJUSTE FINO: Empurra o conteúdo um pouco para cima */
+    padding-bottom: 2px;
+
+    /* Tipografia e Ícone */
+    font-family: Arial, sans-serif; 
+    line-height: 0.8; 
+    font-size: 1.8em; 
+    font-weight: 700;
+    
+    /* Interação */
     cursor: pointer;
-    transition: background-color 0.3s, opacity 0.3s;
-    text-decoration: none; /* Remove sublinhado */
+    text-decoration: none;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
 }
 
 #back-to-top:hover {
-    background-color: #8C001A;
-    opacity: 0.9;
+    background-color: #b40503; /* Cor mais escura no hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Sombra mais intensa */
+    transform: translateY(-2px); /* Efeito sutil de levantar */
 }
-
