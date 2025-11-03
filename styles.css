@@ -18,7 +18,7 @@ body {
 /* Ajuste no cabeçalho para acomodar a logo */
 header {
     /* Mantendo o que já tínhamos */
-    background-color: #B00020; 
+    background-color: #c00023; 
     color: white;
     padding: 10px 20px; /* Reduz um pouco o padding para centralizar melhor */
     display: flex;
@@ -53,7 +53,7 @@ header {
     }
 }
 header {
-    background-color: #B00020; /* 🔴 VERMELHO Principal */
+    background-color: #c00023; /* 🔴 VERMELHO Principal */
     color: white;
     padding: 15px 20px;
     display: flex; /* Permite colocar a logo e a nav lado a lado */
@@ -84,7 +84,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #CC0000; /* Vermelho um pouco mais escuro no hover (PRETO no fundo VERMELHO ficaria ruim, então escurecemos o vermelho) */
+    background-color: #c00023; /* Vermelho um pouco mais escuro no hover (PRETO no fundo VERMELHO ficaria ruim, então escurecemos o vermelho) */
 }
 
 /* 📜 Estilo do Conteúdo Principal */
@@ -103,7 +103,7 @@ section {
 }
 
 section h2 {
-    color: #FF0000; /* Títulos das seções em VERMELHO */
+    color: #c00023; /* Títulos das seções em VERMELHO */
     border-bottom: 2px solid #000; /* Detalhe em PRETO sob o título */
     padding-bottom: 5px;
 }
@@ -119,4 +119,83 @@ footer {
 
 footer p {
     margin: 5px 0;
+}
+
+/* 📸 ESTILOS DA GALERIA DE FOTOS */
+.fotos-container {
+    display: grid;
+    /* Cria 3 colunas de tamanho igual. Em telas menores, o CSS fará o ajuste */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px; /* Espaço entre as fotos */
+    margin-top: 20px;
+}
+
+.foto-item {
+    display: block; /* Para o link ocupar todo o espaço */
+    overflow: hidden; /* Garante que a imagem se ajuste ao contêiner */
+    border: 3px solid #eee; /* Borda clara */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.foto-item:hover {
+    transform: translateY(-5px); /* Efeito sutil ao passar o mouse */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.foto-item img {
+    width: 100%; /* A imagem preenche o espaço da coluna */
+    height: 200px; /* Altura fixa para manter a grade uniforme (crop) */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    display: block;
+}
+
+.nota-galeria {
+    text-align: center;
+    margin-top: 25px;
+    font-style: italic;
+    color: #666;
+}
+
+/* 📄 ESTILOS DOS DOCUMENTOS (PDFS) */
+.lista-documentos {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-documentos li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px dashed #ccc;
+    display: flex; /* Para alinhar o link e a data */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lista-documentos li:last-child {
+    border-bottom: none; /* Remove a linha do último item */
+}
+
+.lista-documentos a {
+    color: #000; /* Link em preto para contraste */
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.lista-documentos a:hover {
+    color: #c00023; /* Novo Vermelho no hover do link */
+}
+
+.doc-icon {
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+.doc-data {
+    font-size: 0.9em;
+    color: #888;
 }
