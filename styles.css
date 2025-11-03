@@ -34,44 +34,73 @@ header {
 
 /* 📱 Tornando a Navegação Responsiva (para Celular) */
 
-/* Quando a tela for muito pequena (ex: celular) */
+/* 📱 Quando a tela for muito pequena (ex: celular) */
 @media (max-width: 600px) {
+    /* 1. Ajuste no Cabeçalho (Já tínhamos isso, mas verificamos) */
     header {
-        flex-direction: column; /* Coloca a logo e o menu um abaixo do outro */
+        flex-direction: column; 
         padding: 15px 10px;
     }
     
-    nav ul {
-        flex-direction: column; /* Coloca os itens do menu um abaixo do outro */
-        width: 100%;
-        text-align: center;
-        margin-top: 10px;
+    /* Ajuste da Logo (Se 160px for muito grande em celular) */
+    .logo-img {
+        max-height: 80px; /* Reduz a logo no celular para não dominar a tela */
+    }
+
+    /* 2. Ajuste de Fontes no Corpo (Menos texto por linha) */
+    body {
+        font-size: 1em; /* Garante que o tamanho base é bom para celular */
     }
     
-    nav ul li a {
-        padding: 10px;
-        border-top: 1px solid rgba(255, 255, 255, 0.2); /* Linha divisória clara */
+    /* 3. Redução de Margens e Preenchimento */
+    main {
+        padding: 10px; /* Reduz o padding lateral do conteúdo principal */
+    }
+    
+    /* 4. Ajuste dos Títulos de Seção (Para não ficarem muito grandes) */
+    section h2 {
+        font-size: 1.6em; /* Reduz de 2em para 1.6em no celular */
     }
 
-    .logo {
-        margin-bottom: 10px;
+    /* 5. Ajuste dos Itens da Galeria (Garantir que preencham a largura) */
+    .fotos-container {
+        grid-template-columns: 1fr; /* Força 1 coluna em telas muito pequenas (em vez de 2 ou 3) */
+        gap: 10px;
+    }
+    
+    /* 6. Ajuste no Formulário de Contato */
+    #contato {
+        margin: 20px 10px; /* Remove margens automáticas e usa 10px laterais */
+        padding: 15px;
+    }
+    
+    #contato h3 {
+        font-size: 1.2em; /* Reduz o subtítulo */
+    }
+    
+    /* 7. Ajuste dos Links de Documentos */
+    .lista-documentos li {
+        flex-direction: column; /* Quebra em coluna se a linha for muito longa */
+        align-items: flex-start;
+    }
+    .doc-data {
+        margin-top: 5px;
+        margin-left: 28px; /* Alinha a data com o texto abaixo do ícone */
+    }
+    
+    /* 8. Ajuste do Rodapé */
+    .footer-content {
+        flex-direction: column; /* Coloca tudo em coluna no rodapé */
+        text-align: center;
+    }
+    .social-links {
+        margin: 10px 0;
+    }
+    .desenvolvimento {
+        text-align: center;
+        margin-top: 5px;
     }
 }
-header {
-    background-color: #c00023; /* 🔴 VERMELHO Principal */
-    color: white;
-    padding: 15px 20px;
-    display: flex; /* Permite colocar a logo e a nav lado a lado */
-    justify-content: space-between; /* Espaça a logo da navegação */
-    align-items: center; /* Alinha verticalmente */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
-}
-
-.logo h1 {
-    margin: 0;
-    font-size: 1.5em;
-}
-
 /* 🧭 Estilo da Navegação */
 nav ul {
     list-style: none; /* Remove os pontos da lista */
