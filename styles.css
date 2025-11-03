@@ -1,0 +1,78 @@
+/* ⚙️ Configurações Gerais (Reset Básico) */
+body {
+    font-family: Arial, sans-serif; /* Fonte simples e legível */
+    margin: 0; /* Remove margem padrão do navegador */
+    padding: 0;
+    background-color: #f4f4f4; /* Fundo cinza claro para contraste */
+    color: #333; /* Cor de texto padrão (preto suave) */
+}
+
+/* 🧱 Estilo do Cabeçalho */
+header {
+    background-color: #FF0000; /* 🔴 VERMELHO Principal */
+    color: white;
+    padding: 15px 20px;
+    display: flex; /* Permite colocar a logo e a nav lado a lado */
+    justify-content: space-between; /* Espaça a logo da navegação */
+    align-items: center; /* Alinha verticalmente */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+/* 🧭 Estilo da Navegação */
+nav ul {
+    list-style: none; /* Remove os pontos da lista */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Coloca os links lado a lado */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none; /* Remove o sublinhado dos links */
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s; /* Transição suave ao passar o mouse */
+}
+
+nav ul li a:hover {
+    background-color: #CC0000; /* Vermelho um pouco mais escuro no hover (PRETO no fundo VERMELHO ficaria ruim, então escurecemos o vermelho) */
+}
+
+/* 📜 Estilo do Conteúdo Principal */
+main {
+    padding: 20px;
+    max-width: 1200px; /* Limita a largura para melhor leitura */
+    margin: 20px auto; /* Centraliza o conteúdo na tela */
+    background-color: white; /* Fundo branco no conteúdo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-bottom: 1px solid #ccc; /* Linha divisória entre seções */
+}
+
+section h2 {
+    color: #FF0000; /* Títulos das seções em VERMELHO */
+    border-bottom: 2px solid #000; /* Detalhe em PRETO sob o título */
+    padding-bottom: 5px;
+}
+
+/* 🦶 Estilo do Rodapé */
+footer {
+    background-color: #333; /* Fundo em PRETO (ou cinza escuro) */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.8em;
+}
+
+footer p {
+    margin: 5px 0;
+}
