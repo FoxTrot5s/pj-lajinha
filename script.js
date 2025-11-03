@@ -29,3 +29,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Configura o estado inicial: garante que o formulário esteja escondido ao carregar
     conteudo.style.display = 'none';
 });
+
+// Pega o elemento do botão
+let mybutton = document.getElementById("back-to-top");
+
+// Quando o usuário rola 20px para baixo, mostra o botão
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// O retorno ao topo é tratado pelo href="#top" no HTML, 
+// desde que o elemento body tenha id="top" ou você use CSS/JS para rolagem suave
