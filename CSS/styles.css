@@ -63,10 +63,18 @@ header {
     background-color: #c00023; 
     color: white;
     padding: 10px 20px; /* Reduz um pouco o padding para centralizar melhor */
-    display: flex;
-    justify-content: space-between;
+    /* ✅ NOVO: Menu e Logo LADO A LADO */
+    display: flex; 
+    
+    /* ✅ NOVO: Manda a Logo para um lado e o Menu para o outro */
+    justify-content: space-between; 
+    
+    /* ✅ NOVO: Alinha verticalmente a Logo e o Menu ao centro */
     align-items: center; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra mais visível */
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    position: relative; 
+    z-index: 100;
 }
 
 /* 📱 Tornando a Navegação Responsiva (para Celular) */
@@ -184,18 +192,28 @@ header {
 }
 /* 🧭 Estilo da Navegação */
 nav ul {
-    list-style: none; /* Remove os pontos da lista */
+    list-style: none; 
     padding: 0;
     margin: 0;
-    display: flex; /* Coloca os links lado a lado */
+
+    /* ✅ NOVO: Coloca os links um ao lado do outro */
+    display: flex; 
+    
+    /* ✅ NOVO: Garante o alinhamento vertical dos links */
+    align-items: center;
+
+    /* REVERTER: Remove estas linhas se você as adicionou para o menu vertical */
+    /* width: 100%; */
+    /* text-align: center; */
 }
 
 nav ul li a {
     color: white;
-    text-decoration: none; /* Remove o sublinhado dos links */
-    padding: 10px 15px;
+    text-decoration: none;
+    /* ✅ Ajustar o espaçamento horizontal dos itens */
+    padding: 10px 15px; 
     display: block;
-    transition: background-color 0.3s; /* Transição suave ao passar o mouse */
+    transition: background-color 0.3s;
 }
 
 nav ul li a:hover {
