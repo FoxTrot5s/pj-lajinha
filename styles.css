@@ -3,13 +3,57 @@ body {
     font-family: Arial, sans-serif; /* Fonte simples e legível */
     margin: 0; /* Remove margem padrão do navegador */
     padding: 0;
-    background-color: #f4f4f4; /* Fundo cinza claro para contraste */
+    background-color: #ececec; /* Fundo cinza claro para contraste */
     color: #333; /* Cor de texto padrão (preto suave) */
 }
 
 /* 🧱 Estilo do Cabeçalho */
+/* 🖼️ Estilo da Imagem da Logo */
+.logo-img {
+    max-height: 160px; /* Limita a altura máxima da logo */
+    width: auto;     /* Mantém a proporção da imagem */
+    margin-right: 15px; /* Espaço entre a logo e o menu, se necessário */
+}
+
+/* Ajuste no cabeçalho para acomodar a logo */
 header {
-    background-color: #FF0000; /* 🔴 VERMELHO Principal */
+    /* Mantendo o que já tínhamos */
+    background-color: #B00020; 
+    color: white;
+    padding: 10px 20px; /* Reduz um pouco o padding para centralizar melhor */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra mais visível */
+}
+
+/* 📱 Tornando a Navegação Responsiva (para Celular) */
+
+/* Quando a tela for muito pequena (ex: celular) */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column; /* Coloca a logo e o menu um abaixo do outro */
+        padding: 15px 10px;
+    }
+    
+    nav ul {
+        flex-direction: column; /* Coloca os itens do menu um abaixo do outro */
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    nav ul li a {
+        padding: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2); /* Linha divisória clara */
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+}
+header {
+    background-color: #B00020; /* 🔴 VERMELHO Principal */
     color: white;
     padding: 15px 20px;
     display: flex; /* Permite colocar a logo e a nav lado a lado */
