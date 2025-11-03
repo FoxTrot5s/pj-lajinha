@@ -1,4 +1,56 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+
+const menuToggle = document.getElementById('menu-toggle');
+const mainNavigation = document.getElementById('main-navigation');
+
+if (menuToggle && mainNavigation) {
+    menuToggle.addEventListener('click', function() {
+        // Alterna a classe 'open' na tag <nav>
+        mainNavigation.classList.toggle('open'); 
+        
+        // Atualiza o atributo de acessibilidade
+        let isExpanded = this.getAttribute('aria-expanded') === 'true' || false;
+        this.setAttribute('aria-expanded', !isExpanded);
+    });
+}
+
+// ===============================================
+// LÓGICA DE TROCA DE PÁGINAS (SECTIONS)
+// ===============================================
+const navLinks = document.querySelectorAll('nav ul li a');
+const allSections = document.querySelectorAll('main section:not(#contato-trigger)');
+
+// Função principal para mostrar a seção
+function showSection(sectionId) {
+    // 1. Esconde todas as seções
+    allSections.forEach(section => {
+        section.style.display = 'none';
+    });
+
+    // 2. Mostra a seção desejada
+    const targetSection = document.querySelector(sectionId);
+    if (targetSection) {
+        targetSection.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Rola para o topo
+    }
+}
+
+// Adiciona o ouvinte de clique em todos os links de navegação
+navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault(); // Impede o comportamento padrão de rolar
+        
+        const targetId = this.getAttribute('href'); // Pega o ID (#historias, #galeria, etc.)
+        showSection(targetId);
+        
+        // No mobile: fecha o menu hamburger depois de clicar
+        if (mainNavigation.classList.contains('open')) {
+             mainNavigation.classList.remove('open');
+             menuToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+});
     
     // ===============================================
     // CÓDIGO DO BOTÃO VOLTAR AO TOPO (Back-to-Top)
@@ -55,4 +107,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // Configura o estado inicial: garante que o formulário esteja escondido ao carregar
         conteudoContato.style.display = 'none';
     }
-});
+
+    // ... (código do toggle do formulário e fim do DOMContentLoaded)
+
+    // Configura o estado inicial: garante que o formulário esteja escondido ao carregar
+    conteudoContato.style.display = 'none';
+    
+    // 🚨 NOVO CÓDIGO: Define a seção inicial a ser exibida
+    // Chama a função para mostrar a seção '#historias' (que por sua vez não esconde #contato-trigger)
+    showSection('#historias'); 
+
+}); // Fim do DOMContentLoaded

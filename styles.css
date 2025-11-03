@@ -7,6 +7,45 @@ body {
     color: #333;
 }
 
+header {
+    /* ... seus estilos existentes ... */
+    
+    /* 🚨 ESTE É O AJUSTE CRÍTICO: Define o header como ponto zero */
+    position: relative; 
+    
+    /* Adicione 'z-index' para garantir que fique acima do menu flutuante */
+    z-index: 100;
+}
+
+/* ⚠️ OCULTA TODAS AS SEÇÕES POR PADRÃO PARA O MODO SINGLE PAGE */
+/* Isso será controlado pelo JavaScript */
+section {
+    display: none;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+/* ⚠️ FORÇA APENAS A SEÇÃO DE HISTÓRIAS A SER VISÍVEL POR PADRÃO */
+# {#historias
+    display: block; 
+}
+#contato-trigger {
+    display: block !important; 
+}
+
+
+/* 🍔 ESTILO DO BOTÃO HAMBURGUER (MOBILE) */
+.menu-toggle {
+    display: none; /* Escondido por padrão no desktop */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 1001; /* Garante que fique acima do menu */
+    padding: 5px;
+}
+
 /* ✒️ Aplica Poppins nos Títulos */
 h1, h2, h3, h4, h5, h6, .logo h1 {
     font-family: 'Poppins', sans-serif;
@@ -36,6 +75,50 @@ header {
 
 /* 📱 Quando a tela for muito pequena (ex: celular) */
 @media (max-width: 600px) {
+
+    /* Mostrar o Botão Hamburger no Mobile */
+    .menu-toggle {
+        display: block; 
+    }
+    
+    /* Configuração do Menu (Nav) para Mobile */
+    nav {
+        display: none; 
+        
+        /* ✅ Posição Absoluta para cair DENTRO do header (que é 'relative') */
+        position: absolute; 
+        
+        /* 🚨 Garante que o menu comece exatamente abaixo do header */
+        top: 100%; 
+        
+        /* Garante que o menu ocupe toda a largura */
+        left: 0; 
+        width: 100%;
+        
+        background-color: #B00020;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        z-index: 99; /* Um pouco abaixo do header */
+        padding-bottom: 10px;
+    }
+    
+    /* Menu Visível quando a classe 'open' é adicionada pelo JS */
+    nav.open {
+        display: block; 
+    }
+    
+    nav ul {
+        flex-direction: column; 
+        width: 100%;
+        text-align: center;
+        margin-top: 0;
+    }
+    
+    nav ul li a {
+        padding: 15px; /* Aumenta o padding para ser fácil de tocar */
+        border-top: 1px solid rgba(255, 255, 255, 0.2); 
+    }
+
+    /* ... (restante das suas media queries) ... */
     /* 1. Ajuste no Cabeçalho (Já tínhamos isso, mas verificamos) */
     header {
         flex-direction: column; 
