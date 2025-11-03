@@ -109,15 +109,22 @@
         </section>
     </main>
 
-    <section id="contato">
-        <h2>Fale Conosco</h2>
+    <section id="contato-trigger">
+    
+        <button id="toggleContatoBtn" class="botao-contato-acao">
+            Traga sua História para Nós! (Clique para Abrir o Formulário)
+        </button>
         
-        <h3>Traga sua história para nós! Conte sua experiência com a Pastoral.</h3>
-        
-        <p class="introducao-contato">
-            Se você tem uma história emocionante, um testemunho de fé ou deseja se juntar a nós, 
-            preencha o formulário abaixo. Sua experiência inspira a nossa comunidade!
-        </p>
+        <div id="contato-conteudo">
+            
+            <h2>Fale Conosco</h2>
+            
+            <h3>Traga sua história para nós! Conte sua experiência com a Pastoral.</h3>
+            
+            <p class="introducao-contato">
+                Se você tem uma história emocionante, um testemunho de fé ou deseja se juntar a nós, 
+                preencha o formulário abaixo. Sua experiência inspira a nossa comunidade!
+            </p>
         
         <form action="https://formspree.io/f/xqagorod" method="POST" class="formulario-contato">
             
@@ -132,19 +139,22 @@
 
             <label for="mensagem">Mensagem:</label>
             <textarea id="mensagem" name="Mensagem" rows="5" required></textarea>
-            
+
             <button type="submit" class="botao-enviar">Enviar Mensagem</button>
             
         </form>
         
         <p class="nota-contato">Ou envie um e-mail diretamente para: <a href="mailto:contato@pastoraljuventude.com" target="_blank">contato@pastoraljuventude.com</a></p>
     
-    </section>
+    </div> 
+</section>
 
     <footer>
         <p>&copy; 2024 Pastoral da Juventude - Todos os direitos reservados.</p>
         <p>Desenvolvido Por Daniel Romualdo.</p>
     </footer>
-    
+
+<script src="script.js"></script>
+
 </body>
 </html>

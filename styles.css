@@ -347,3 +347,34 @@ footer p {
 }
 
 /* O restante do CSS de contato permanece inalterado... */
+
+/* 🎭 ESTILOS DO ACIONADOR (TOGGLE) */
+/* Por padrão, esconde o conteúdo do formulário */
+#contato-conteudo {
+    display: none; 
+    padding: 20px;
+    border: 1px solid #B00020;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Estilo do Botão Acionador */
+.botao-contato-acao {
+    display: block;
+    width: 100%;
+    background-color: #B00020; /* Nosso Vermelho Sóbrio */
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 700;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.botao-contato-acao:hover {
+    background-color: #8C001A;
+    transform: translateY(-2px);
+}
