@@ -26,9 +26,7 @@ section {
 }
 
 /* ⚠️ FORÇA APENAS A SEÇÃO DE HISTÓRIAS A SER VISÍVEL POR PADRÃO */
-# {#historias
-    display: block; 
-}
+
 #contato-trigger {
     display: block !important; 
 }
@@ -561,4 +559,99 @@ footer {
     background-color: #b40503; /* Cor mais escura no hover */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Sombra mais intensa */
     transform: translateY(-2px); /* Efeito sutil de levantar */
+}
+
+/* =============================================== */
+/* 📸 ESTILOS DO CARROSSEL DE IMAGENS */
+/* =============================================== */
+
+.carousel-container {
+    max-width: 800px; /* Limita a largura máxima do carrossel */
+    position: relative;
+    margin: 20px auto;
+    overflow: hidden; /* Garante que apenas a imagem atual seja visível */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-slide {
+    display: none; /* ⚠️ CRÍTICO: Oculta todas as imagens por padrão */
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* Legenda da Imagem */
+.carousel-caption {
+    color: #f2f2f2;
+    font-size: 1.2em;
+    padding: 10px 15px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro semi-transparente */
+}
+
+/* ➡️ Estilo das Setas de Navegação (Anterior/Próximo) */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Posição da Seta "Próximo" (direita) */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Efeito Hover nas Setas */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* ⚪ Estilo dos Pontos (Dots) */
+.carousel-dots-container {
+    margin-top: 10px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+/* Estilo do Ponto Ativo */
+.active, .dot:hover {
+    background-color: #c00023; /* Usa a cor principal da PJ */
+}
+
+/* Animação de Fade (opcional) */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
 }

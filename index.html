@@ -9,13 +9,13 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
         
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="css/styles.css">
     </head>
 <body>
-
+   
     <header>
         <div class="logo">
-            <img src="logo-pastoral.png" alt="Logo da Pastoral da Juventude" class="logo-img">
+            <img src="assets\img\logo-pastoral.png" alt="Logo da Pastoral da Juventude" class="logo-img">
         </div>
         
         <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-navigation"> ☰ </button>
@@ -37,7 +37,37 @@
 
             <section id="historias">
                 <h2>Nossas Histórias</h2>
+
+        <div class="carousel-container">
+            
+            <div class="carousel-track">
+                <div class="carousel-slide fade">
+                    <img src="assets/img/dnj-todos.jpeg" alt="Imagem do Carrossel 2: DNJ-2025">
+                    <div class="carousel-caption">DNJ-2025</div>
+                </div>
+
+                <div class="carousel-slide fade">
+                    <img src="assets/img/dnj-2025.jpeg" alt="Imagem do Carrossel 2 - PJ Lajinha DNJ-2025">
+                    <div class="carousel-caption">PJ Lajinha no DNJ 2025</div>
+                </div>
+
+                <div class="carousel-slide fade">
+                    <img src="assets/img/juc-dnj.jpeg" alt="Imagem do Carrossel 3 - Grupo Juc">
+                    <div class="carousel-caption"> Jovens no DNJ-2025</div>
+                </div>
+
                 
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        
+        <div class="carousel-dots-container" style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
                 <article>
                     <h3>O Início de Tudo</h3>
                     <span class="data-publicacao">Publicado em: 10 de Agosto de 2015</span> 
@@ -162,9 +192,7 @@
                 <p>Desenvolvido Por Daniel Romualdo.</p>
             </div>      
     </footer>
-
 <a href="#top" id="back-to-top" title="Voltar ao Topo">^</a>
-<script src="script.js"></script>
-
+<script src="js/script.js"></script>
 </body>
 </html>

@@ -118,3 +118,56 @@ navLinks.forEach(link => {
     showSection('#historias'); 
 
 }); // Fim do DOMContentLoaded
+
+// ===============================================
+// 📸 CÓDIGO DO CARROSSEL DE IMAGENS
+// ===============================================
+
+let slideIndex = 1;
+
+// Chamada inicial para mostrar a primeira imagem quando a página carregar
+document.addEventListener('DOMContentLoaded', function() {
+    showSlides(slideIndex);
+});
+
+// Função para avançar/retroceder com as setas
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+// Função para navegar pelos pontos (dots)
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+// Função principal que controla a visibilidade das imagens
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("carousel-slide");
+    let dots = document.getElementsByClassName("dot");
+
+    // Condição para loop infinito (chegar ao fim e voltar para o início)
+    if (n > slides.length) {
+        slideIndex = 1;
+    }    
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
+    
+    // Oculta todas as imagens
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    
+    // Remove a classe 'active' de todos os pontos
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    
+    // Mostra a imagem atual e marca o ponto correspondente
+    // Verifica se o carrossel existe antes de tentar mostrar
+    if (slides.length > 0) {
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+    }
+}
