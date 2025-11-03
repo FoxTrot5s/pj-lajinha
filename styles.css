@@ -206,3 +206,44 @@ footer p {
     font-size: 0.9em;
     color: #888;
 }
+/* 📝 ESTILOS DA SEÇÃO HISTÓRIAS */
+#historias article {
+    background-color: #ffffff; /* Fundo branco para cada história */
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 1px solid #ddd; /* Borda suave */
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra suave para destacar o bloco */
+    transition: transform 0.3s ease;
+}
+
+#historias article:hover {
+    transform: translateY(-3px); /* Efeito sutil para indicar que é um conteúdo que pode ser clicado/lido */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+#historias article h3 {
+    color: #B00020; /* Título da história no nosso Vermelho Sóbrio */
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-left: 5px solid #000; /* Detalhe lateral em Preto */
+    padding-left: 15px;
+}
+
+#historias article p {
+    line-height: 1.6; /* Aumenta o espaçamento entre linhas para melhor leitura */
+    margin-bottom: 15px;
+    text-align: justify; /* Alinha o texto na horizontal (justificado) */
+}
+
+/* Estilo para simular a data de publicação (se adicionarmos no HTML) */
+.data-publicacao {
+    display: block;
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 10px;
+}
